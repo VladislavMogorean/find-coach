@@ -1,0 +1,250 @@
+@use "variables" as *;
+
+@mixin gradient-primary {
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+}
+
+@mixin gradient-secondary {
+  background: linear-gradient(135deg, $color-accent, #f5576c);
+}
+
+@mixin gradient-accent {
+  background: linear-gradient(
+    90deg,
+    $color-primary,
+    $color-secondary,
+    $color-accent
+  );
+}
+
+@mixin glass-effect($blur: 20px, $opacity: 0.95) {
+  background: rgba(255, 255, 255, $opacity);
+  backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@mixin glass-card {
+  @include glass-effect(20px, 0.95);
+  border-radius: $border-radius-xl;
+  box-shadow: $shadow-lg, 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-xl, 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@mixin button-base {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: $border-radius-md;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-base;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@mixin button-primary {
+  @include button-base;
+  @include gradient-primary;
+  color: $color-white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background: rgba(255, 255, 255, 0.9);
+  color: $color-primary;
+  border: 2px solid $color-primary;
+
+  &:hover:not(:disabled) {
+    background: $color-primary;
+    color: $color-white;
+    transform: translateY(-2px);
+  }
+}
+
+@mixin form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+@mixin input-base {
+  padding: 1rem 1.5rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: $border-radius-lg;
+  background: $bg-glass;
+  backdrop-filter: blur(10px);
+  font-size: 1rem;
+  transition: all $transition-base;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  &:focus {
+    border-color: $color-primary;
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(102, 126, 234, 0.2);
+  }
+
+  &.is-invalid {
+    border-color: $color-danger;
+    box-shadow: 0 4px 20px rgba(231, 76, 60, 0.2);
+    animation: shake 0.5s ease-in-out;
+  }
+
+  &::placeholder {
+    color: rgba(44, 62, 80, 0.6);
+  }
+}
+
+@mixin label-base {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: $color-dark;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin container-padding {
+  padding: 2rem;
+  margin: 1.5rem;
+}
+
+@mixin grid-auto($min-width: 350px, $gap: 2rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+@mixin text-gradient {
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin text-error {
+  color: $color-danger;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+@mixin hover-lift {
+  transition: transform $transition-base;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@mixin bounce-in {
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@mixin checkbox-custom {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid $color-primary;
+  border-radius: $border-radius-sm;
+  background: $bg-glass;
+  cursor: pointer;
+  transition: all $transition-base;
+  margin-right: 1rem;
+  position: relative;
+
+  &:checked {
+    @include gradient-primary;
+    border-color: $color-primary;
+    transform: scale(1.1);
+
+    &::after {
+      content: "✓";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $color-white;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+
+  &:hover:not(:disabled) {
+    border-color: #5a6fd8;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+  }
+}
+
+@mixin checkbox-form {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid $color-primary;
+  border-radius: $border-radius-sm;
+  background: $bg-glass;
+  cursor: pointer;
+  transition: all $transition-base;
+  position: relative;
+
+  &:checked {
+    @include gradient-primary;
+    border-color: $color-primary;
+    transform: scale(1.1);
+
+    &::after {
+      content: "✓";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: $color-white;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+
+  &:hover:not(:disabled) {
+    border-color: #5a6fd8;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+  }
+}

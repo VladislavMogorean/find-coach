@@ -1,0 +1,78 @@
+$color-primary: #667eea;
+$color-secondary: #764ba2;
+$color-accent: #f093fb;
+$color-success: #10b981;
+$color-warning: #f59e0b;
+$color-danger: #e74c3c;
+$color-info: #3b82f6;
+
+$color-white: #ffffff;
+$color-light: #f8f9fa;
+$color-muted: #6b7280;
+$color-dark: #2c3e50;
+$color-black: #1a1a1a;
+
+$bg-primary: #f0f0f0;
+$bg-glass: rgba(255, 255, 255, 0.95);
+$bg-glass-light: rgba(255, 255, 255, 0.1);
+
+$border-radius-sm: 8px;
+$border-radius-md: 12px;
+$border-radius-lg: 15px;
+$border-radius-xl: 20px;
+
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.15);
+
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+$z-dropdown: 10;
+$z-sticky: 20;
+$z-modal: 30;
+$z-tooltip: 40;
+$z-top: 50;
+
+$font-primary: "Mona Sans", "Inter", system-ui, -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-mono: "SF Mono", "Monaco", "Inconsolata", "Roboto Mono", "Source Code Pro",
+  monospace;
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-accent: #{$color-accent};
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-danger: #{$color-danger};
+  --color-info: #{$color-info};
+  --color-white: #{$color-white};
+  --color-light: #{$color-light};
+  --color-muted: #{$color-muted};
+  --color-dark: #{$color-dark};
+  --color-black: #{$color-black};
+  --bg-primary: #{$bg-primary};
+  --bg-glass: #{$bg-glass};
+  --bg-glass-light: #{$bg-glass-light};
+  --border-radius-sm: #{$border-radius-sm};
+  --border-radius-md: #{$border-radius-md};
+  --border-radius-lg: #{$border-radius-lg};
+  --border-radius-xl: #{$border-radius-xl};
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-xl: #{$shadow-xl};
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+  --z-dropdown: #{$z-dropdown};
+  --z-sticky: #{$z-sticky};
+  --z-modal: #{$z-modal};
+  --z-tooltip: #{$z-tooltip};
+  --z-top: #{$z-top};
+  --font-primary: #{$font-primary};
+  --font-mono: #{$font-mono};
+}
