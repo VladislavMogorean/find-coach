@@ -1,4 +1,4 @@
-# vscode-vue-cli
+# find-coach
 
 ## Project setup
 
