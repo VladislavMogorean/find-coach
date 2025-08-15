@@ -4,15 +4,6 @@
 
 This is purely my personal adaptation of a project taken from the Vue.js course by Maximilian Schwarzmüller (Udemy).
 
-### 🎯 Main Features:
-
-- **Coach Discovery** - Browse and filter available coaches by specialization
-- **Coach Registration** - Register as a coach with your expertise areas
-- **Request Management** - Send and receive coaching requests
-- **Authentication** - Secure user login and registration
-- **Profile Management** - Manage coach profiles and contact information
-- **Real-time Updates** - Firebase integration for live data synchronization
-
 ## 🛠️ Technology Stack
 
 ### Frontend:
@@ -106,78 +97,6 @@ The application will be available at: `http://localhost:8080`
 - `npm run lint` - Run ESLint to check code quality
 - `npm run lint:fix` - Auto-fix ESLint issues
 - `npm run format` - Format code with Prettier
-
-## 🎨 Architecture Features
-
-### Vuex Store Pattern:
-
-- **Modular Design** - Separate modules for coaches, requests, and authentication
-- **Namespaced Modules** - Clean separation of concerns with namespaced getters/actions
-- **Cross-module Communication** - RootGetters pattern for accessing global state
-- **Firebase Integration** - Direct HTTP calls to Firebase REST APIs
-
-### Component Architecture:
-
-- **Global UI Components** - Reusable BaseCard, BaseButton, BaseBadge, BaseSpinner
-- **Scoped Styling** - Component-specific SCSS with BEM methodology
-- **Form Validation** - Reactive validation pattern with real-time feedback
-- **Router Integration** - Dynamic navigation with route guards
-
-### Firebase Backend:
-
-- **Real-time Database** - JSON-based data storage with real-time updates
-- **Authentication** - JWT-based user authentication with Firebase Auth
-- **Hosting** - Serverless deployment with Firebase Hosting
-
-## 🔧 Key Components and Functionality
-
-### Coach Management:
-
-- **CoachesList.vue** - Browse and filter coaches
-- **CoachesDetails.vue** - Detailed coach profile view
-- **CoachesRegister.vue** - Coach registration form
-- **CoachFilter.vue** - Advanced filtering by expertise areas
-
-### Request System:
-
-- **ContactCoach.vue** - Send coaching requests
-- **RequestReceived.vue** - View incoming requests
-- **RequestItem.vue** - Individual request display
-
-### Authentication:
-
-- **UserAuth.vue** - Login and registration forms
-- **Route Guards** - Protected routes for authenticated users
-- **Token Management** - Automatic token refresh and validation
-
-### UI Components:
-
-- **TheHeader.vue** - Navigation with conditional authentication
-- **BaseButton.vue** - Versatile button component (router links, events, forms)
-- **BaseCard.vue** - Consistent card layout
-- **BaseSpinner.vue** - Loading states
-
-## 🌍 State Management
-
-### Vuex Modules:
-
-**Coaches Module:**
-
-- Coach registration and profile management
-- Coach listing and filtering
-- Expertise area management
-
-**Requests Module:**
-
-- Send and receive coaching requests
-- Request status tracking
-- Message handling
-
-**Auth Module:**
-
-- User authentication (login/signup)
-- Token management
-- Authentication state persistence
 
 ## 🚀 Deployment
 
